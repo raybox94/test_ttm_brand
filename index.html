@@ -39,7 +39,7 @@
 		
 		<input type="hidden" id="formID" name="formID" value="8d492b43-49df-4820-acc3-3cdeec042844" /> <!-- This is used by the javascript formtrack.js -->
 		<input type="hidden" name="fromFormBuilder" value="1" />
-		<input type="hidden" id="startTime" name="startTime" value="1622836195" />
+		<input type="hidden" id="startTime" name="startTime" value="1622920556" />
 		<input type="hidden" id="srcCode" name="srcCode" value="953" />
 		<input type="hidden" id="tempId" name="tempId" value="00923f0d67487507b5a367962e2b71b1a9ad4699b97eeace29c32f196d383ac8" />
 		<input type="hidden" id="existingOcid" name="existingOcid" value="26224553" />
@@ -79,7 +79,7 @@
 			var __termIdByPackId = [];
 			var promise = new Promise(function(resolve, reject) {
 				// do a thing, possibly async, then…
-				var demos = {"1":{"id":1,"label":"Email","type":"text","type_id":0,"validations":["email"],"value":[],"is_auto_populate":true}};
+				var demos = {"1":{"id":1,"label":"Email","type":"text","type_id":0,"validations":["email","email_exists","required"],"value":[],"is_auto_populate":true}};
 
 				OCForms.setQuestions(demos);
 
@@ -104,8 +104,8 @@
 			OCForms.ready = promise;
 			</script>
 			<style>
-			* { box-sizing: border-box; } body {margin: 0;}#if28{min-height:40px;}#if95{min-height:40px;}#iobea{min-height:40px;}			</style>
-			<div class="container editor-layout"><div class="row" id="if28"><div class="col"><div id="ikjjz"><div data-type="custom-div" class="row"><div data-type="custom-div" class="col-sm"><div data-type="custom-div" class="form-group"><label data-type="demo-label" id="demo-label-1" for="exampleInputEmail1">{{label}}</label><input type="{{type}}" id="q_id_1" name="userResponse[1]" class="form-control"/></div></div></div></div></div></div></div><div class="container editor-layout"><div class="row" id="if95"><div class="col"><div data-type="captcha" id="i416c"></div></div></div></div><div class="container editor-layout"><div class="row" id="iobea"><div class="col"><button type="button" data-type="button" action="subscription" onclick="OCForms.validateAndSubmit(this)" class="btn btn-danger submit-button">Submit</button></div></div></div><script>var items = document.querySelectorAll('#ikjjz');
+			* { box-sizing: border-box; } body {margin: 0;}			</style>
+			<div class="container editor-layout"><div id="if28" class="row"><div class="col"><div id="ikjjz"><div data-type="custom-div" class="row"><div data-type="custom-div" class="col-sm"><div data-type="custom-div" class="form-group"><label data-type="demo-label" id="demo-label-1" for="exampleInputEmail1">{{label}}</label><input type="{{type}}" id="q_id_1" name="userResponse[1]" class="form-control"/></div></div></div></div></div></div></div><div class="container editor-layout"><div id="if95" class="row"><div class="col"><div data-type="captcha" id="i416c"></div></div></div></div><div class="container editor-layout"><div id="iobea" class="row"><div class="col"><button type="button" data-type="button" action="subscription" onclick="OCForms.validateAndSubmit(this)" class="btn btn-danger submit-button">Submit</button></div></div></div><script>var items = document.querySelectorAll('#ikjjz');
         for (var i = 0, len = items.length; i < len; i++) {
           (function(){//Data marker
         	  var id = '1';
@@ -113,6 +113,9 @@
         	  OCForms.renderComponent("input", this, id);}.bind(items[i]))();
         }
         var items = document.querySelectorAll('#i416c');
+        for (var i = 0, len = items.length; i < len; i++) {
+          (function(){OCForms.renderCaptcha(this);}.bind(items[i]))();
+        }</script><script>var items = document.querySelectorAll('#i416c');
         for (var i = 0, len = items.length; i < len; i++) {
           (function(){OCForms.renderCaptcha(this);}.bind(items[i]))();
         }</script>			<div class="clearfix"></div>
